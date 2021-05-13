@@ -85,9 +85,6 @@ android {
 
 // iOS
 val packForXcode by tasks.creating(Sync::class) {
-    // Kobray: Runs `kapt` for iOS builds
-    dependsOn("kaptDebugKotlinAndroid")
-
     group = "build"
     val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
     val sdkName = System.getenv("SDK_NAME") ?: "iphonesimulator"
